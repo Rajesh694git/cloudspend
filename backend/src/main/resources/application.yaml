@@ -5,6 +5,18 @@ spring:
   application:
     name: cloudspend-backend
 
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/cloudspend}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      # Keep schema management explicit; migrations/entities will be added with the data model.
+      ddl-auto: none
+    open-in-view: false
+
 logging:
   level:
     root: INFO
